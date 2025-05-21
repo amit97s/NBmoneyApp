@@ -6,7 +6,7 @@ exports.createTransaction = async (req, res) => {
     
     const transaction = await Transaction.create({
       date,
-      vnNo: `VN${Date.now()}`,
+      vnNo,  // Use the vnNo provided from frontend
       creditEntry: {
         account: creditAccount.account,
         amount: creditAccount.amount,
